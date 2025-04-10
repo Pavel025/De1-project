@@ -15,3 +15,4 @@ Bzučák
   - od 1 metru
   - po 0,2 m zvyšovat frekvenci?
 
+![Snímek obrazovky](Snímek%20obrazovky%202025-04-10%20101607.png)
