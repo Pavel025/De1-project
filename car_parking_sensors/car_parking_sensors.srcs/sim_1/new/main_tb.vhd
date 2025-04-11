@@ -1,10 +1,5 @@
--- Testbench automatically generated online
--- at https://vhdl.lapinoo.net
--- Generation date : Thu, 10 Apr 2025 17:30:36 GMT
--- Request id : cfwk-fed377c2-67f8003cccff8
-
 library ieee;
-    use ieee.std_logic_1164.all;
+use ieee.std_logic_1164.all;
 
 entity tb_main is
 end entity tb_main;
@@ -15,59 +10,84 @@ architecture tb of tb_main is
         generic (
             n_bits : integer
         );
-        port (clk   : in std_logic;
-              echo  : in std_logic;
-              trig  : out std_logic;
-              count : out std_logic_vector (n_bits downto 0));
+        port (
+            clk    : in std_logic;
+            echo   : in std_logic;
+            impuls : out std_logic;
+            trig   : out std_logic;
+            count  : out std_logic_vector(n_bits downto 0)
+        );
     end component;
 
     constant c_nbits : integer := 14;  
-    signal clk   : std_logic;
-    signal echo  : std_logic;
-    signal trig  : std_logic;
-    signal count : std_logic_vector (c_nbits downto 0);
+    signal clk    : std_logic := '0';
+    signal echo   : std_logic := '0';
+    signal trig   : std_logic;
+    signal impuls : std_logic;
+    signal count  : std_logic_vector(c_nbits downto 0);
 
-    constant TbPeriod : time := 10 ns; -- ***EDIT*** Put right period here
-    signal TbClock : std_logic := '0';
+    constant TbPeriod : time := 10 ns; -- 100 MHz hodiny
     signal TbSimEnded : std_logic := '0';
 
 begin
 
-    dut : component main
-    generic map (
-        n_bits => c_nbits
+    -- DUT instance
+    dut : main
+        generic map (
+            n_bits => c_nbits
         )
-    port map (clk   => clk,
-              echo  => echo,
-              trig  => trig,
-              count => count);
+        port map (
+            clk    => clk,
+            echo   => echo,
+            impuls => impuls,
+            trig   => trig,
+            count  => count
+        );
 
-    -- Clock generation
-    TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
-
-    -- ***EDIT*** Check that clk is really your main clock signal
-    clk <= TbClock;
-
-    stimuli : process is
+    -- Clock generation (100 MHz)
+    clk_gen : process
     begin
-        -- ***EDIT*** Adapt initialization as needed
-        echo <= '0';
-        wait for 50 ns;
+        while TbSimEnded = '0' loop
+            clk <= '0';
+            wait for TbPeriod / 2;
+            clk <= '1';
+            wait for TbPeriod / 2;
+        end loop;
+        wait;
+    end process;
+
+    -- Stimuli generation
+    stimuli : process
+    begin
+        -- Čekej na začátek simulace
+        wait for 2 ms;
+
+        -- První echo pulz - 50 µs
         echo <= '1';
-        wait for 500 ns;
+        wait for 50 us;
         echo <= '0';
 
-        -- ***EDIT*** Add stimuli here
-        wait for 100 * TbPeriod;
+        wait for 5 ms;
 
-        -- Stop the clock and hence terminate the simulation
+        -- Druhý echo pulz - 100 µs
+        echo <= '1';
+        wait for 100 us;
+        echo <= '0';
+
+        wait for 10 ms;
+
+        -- Třetí echo pulz - 200 µs
+        echo <= '1';
+        wait for 200 us;
+        echo <= '0';
+
+        -- Konec simulace
+        wait for 10 ms;
         TbSimEnded <= '1';
         wait;
     end process;
 
 end architecture tb;
-
--- Configuration block below is required by some simulators. Usually no need to edit.
 
 configuration cfg_tb_main of tb_main is
     for tb
