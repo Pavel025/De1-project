@@ -13,9 +13,9 @@ architecture tb of tb_main is
         port (
             clk    : in std_logic;
             echo   : in std_logic;
-            impuls : out std_logic;
             trig   : out std_logic;
-            count  : out std_logic_vector(n_bits downto 0)
+            count  : out std_logic_vector(n_bits downto 0);
+            clk_1MHz_out : out std_logic
         );
     end component;
 
@@ -23,8 +23,8 @@ architecture tb of tb_main is
     signal clk    : std_logic := '0';
     signal echo   : std_logic := '0';
     signal trig   : std_logic;
-    signal impuls : std_logic;
     signal count  : std_logic_vector(c_nbits downto 0);
+    signal clk_1MHz_out : std_logic;
 
     constant TbPeriod : time := 10 ns; -- 100 MHz hodiny
     signal TbSimEnded : std_logic := '0';
@@ -39,9 +39,9 @@ begin
         port map (
             clk    => clk,
             echo   => echo,
-            impuls => impuls,
             trig   => trig,
-            count  => count
+            count  => count,
+            clk_1MHz_out => clk_1MHz_out
         );
 
     -- Clock generation (100 MHz)
