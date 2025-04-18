@@ -62,27 +62,27 @@ begin
         -- Čekej na začátek simulace
         wait for 2 ms;
 
-        -- První echo pulz - 50 µs
+        -- První echo pulz - 5 ms
         echo <= '1';
-        wait for 50 us;
+        wait for 5 ms;
         echo <= '0';
 
         wait for 5 ms;
 
-        -- Druhý echo pulz - 100 µs
+        -- Druhý echo pulz - 10 ms
         echo <= '1';
-        wait for 100 us;
+        wait for 10 ms;
         echo <= '0';
 
         wait for 10 ms;
 
-        -- Třetí echo pulz - 200 µs
+        -- Třetí echo pulz - 20 ms
         echo <= '1';
-        wait for 200 us;
+        wait for 20 ms;
         echo <= '0';
 
         -- Konec simulace
-        wait for 10 ms;
+        wait for 15 ms;
         TbSimEnded <= '1';
         wait;
     end process;
