@@ -1,7 +1,7 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Vivado/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot cfg_tb_main_behav xil_defaultlib.cfg_tb_main -log elaborate.log 
+Running: C:/Xilinx/Vivado/2024.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_Buzzer_behav xil_defaultlib.tb_Buzzer -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -12,6 +12,6 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
-Compiling architecture behavioral of entity xil_defaultlib.main [main_default]
-Compiling architecture tb of entity xil_defaultlib.tb_main [tb_main]
-Built simulation snapshot cfg_tb_main_behav
+Compiling architecture behavioral of entity xil_defaultlib.Buzzer [buzzer_default]
+Compiling architecture tb of entity xil_defaultlib.tb_buzzer
+Built simulation snapshot tb_Buzzer_behav
