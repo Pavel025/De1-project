@@ -30,13 +30,13 @@ begin
         if rising_edge(clk) then
 
             -- délky intervalů
-            if dist_internal < to_unsigned(2047, 15) then      -- 0.25 m
+            if dist_internal < to_unsigned(8190, 15) then      -- 0.25 m
                 interval      <= 2*CLK_FREQ;  -- 2 s
                 beep_duration <= CLK_FREQ;  
             elsif dist_internal < to_unsigned(4095, 15) then  -- 0.5 m
                 interval      <= 1*CLK_FREQ;   
                 beep_duration <= CLK_FREQ/2;   
-            elsif dist_internal < to_unsigned(8190, 15) then -- 1 m
+            elsif dist_internal < to_unsigned(2047, 15) then -- 1 m
                 interval      <= CLK_FREQ/2;   
                 beep_duration <= CLK_FREQ/4;   
             else
