@@ -1,0 +1,103 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Apr 24 18:06:49 2025
+# Process ID         : 11348
+# Current directory  : C:/Users/tadea/Desktop/De1-project/car_parking_sensors
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent2876 C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.xpr
+# Log file           : C:/Users/tadea/Desktop/De1-project/car_parking_sensors/vivado.log
+# Journal file       : C:/Users/tadea/Desktop/De1-project/car_parking_sensors\vivado.jou
+# Running On         : LAPTOP-8AMEJRL6
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16857 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 17931 MB
+# Available Virtual  : 10841 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/tadea/Desktop/De1-project/car_parking_sensors/car_parking_sensors.xpr
+INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/tadea/Desktop/De1-project/car_parking_sensors/car_parking_sensors.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:07 . Memory (MB): peak = 1227.586 ; gain = 123.188
+update_compile_order -fileset sources_1
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sim_1\new\Displays_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sources_1\new\Displays.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sim_1\new\main_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sim_1\new\Displays_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sim_1\new\Displays_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sim_1\new\Displays_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sources_1\new\Displays.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sim_1\new\main_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sim_1\new\main_tb.vhd:]
+WARNING: [filemgmt 56-199] Attempt to get parsing info during refresh. "On-the-fly" syntax checking information may be incorrect. [C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.srcs\sim_1\new\main_tb.vhd:]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'obstacle_tb'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/tadea/Desktop/De1-project/car_parking_sensors/car_parking_sensors.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'obstacle_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+ERROR: [Common 17-180] Spawn failed: No error
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/tadea/Desktop/De1-project/car_parking_sensors/car_parking_sensors.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj obstacle_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tadea/Desktop/De1-project/car_parking_sensors/car_parking_sensors.srcs/sim_1/new/Displays_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'obstacle_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/tadea/Desktop/De1-project/car_parking_sensors/car_parking_sensors.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot obstacle_tb_behav xil_defaultlib.obstacle_tb -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot obstacle_tb_behav xil_defaultlib.obstacle_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.obstacle_dir_disp [obstacle_dir_disp_default]
+Compiling architecture behavior of entity xil_defaultlib.obstacle_tb
+Built simulation snapshot obstacle_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1228.609 ; gain = 0.711
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/tadea/Desktop/De1-project/car_parking_sensors/car_parking_sensors.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "obstacle_tb_behav -key {Behavioral:sim_1:Functional:obstacle_tb} -tclbatch {obstacle_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source obstacle_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'obstacle_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 1263.082 ; gain = 35.496
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.

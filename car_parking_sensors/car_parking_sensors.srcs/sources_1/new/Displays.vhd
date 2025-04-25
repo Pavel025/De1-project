@@ -27,44 +27,56 @@ architecture Behavioral of obstacle_dir_disp is
 
 begin
 
-    process(clk, reset)
-    begin
-        if reset = '1' then
-            dist1 <= 0; dist2 <= 0; dist3 <= 0; dist4 <= 0;
-            min_dist <= 0;
-        elsif rising_edge(clk) then
-                    -- distX <= time * 17 / 100
-            dist1 <= to_integer(unsigned(time1)) * 17 / 100;
-            dist2 <= to_integer(unsigned(time2)) * 17 / 100;
-            dist3 <= to_integer(unsigned(time3)) * 17 / 100;
-            dist4 <= to_integer(unsigned(time4)) * 17 / 100;
+process(clk, reset)
+    variable d1, d2, d3, d4 : integer;
+    variable local_min : integer;
+    variable local_sensor : integer;
+begin
+    if reset = '1' then
+        dist1 <= 0; dist2 <= 0; dist3 <= 0; dist4 <= 0;
+        min_dist <= 0;
+        min_sensor <= 1;
+    elsif rising_edge(clk) then
+        d1 := to_integer(unsigned(time1)) * 343 / 20000;
+        d2 := to_integer(unsigned(time2)) * 343 / 20000;
+        d3 := to_integer(unsigned(time3)) * 343 / 20000;
+        d4 := to_integer(unsigned(time4)) * 343 / 20000;
+        dist1 <= d1;
+        dist2 <= d2;
+        dist3 <= d3;
+        dist4 <= d4;
 
-            -- Najdi nejmenší vzdálenost
-            min_dist <= dist1;
-            min_sensor <= 1;
+        -- Lokální porovnání mimo signály
+        local_min := d1;
+        local_sensor := 1;
 
-            if dist2 < min_dist then
-                min_dist <= dist2;
-                min_sensor <= 2;
-            end if;
-            if dist3 < min_dist then
-                min_dist <= dist3;
-                min_sensor <= 3;
-            end if;
-            if dist4 < min_dist then
-                min_dist <= dist4;
-                min_sensor <= 4;
-            end if;
-
-            if min_dist < 100 then
-                tens <= min_dist / 10;
-                ones <= min_dist mod 10;
-            else
-                tens <= 10;
-                ones <= 10;
-            end if;
+        if d2 < local_min then
+            local_min := d2;
+            local_sensor := 2;
         end if;
-    end process;
+        if d3 < local_min then
+            local_min := d3;
+            local_sensor := 3;
+        end if;
+        if d4 < local_min then
+            local_min := d4;
+            local_sensor := 4;
+        end if;
+
+        min_dist <= local_min;
+        min_sensor <= local_sensor;
+
+        -- Převod na číslice
+        if local_min < 100 then
+            tens <= local_min / 10;
+            ones <= local_min mod 10;
+        else
+            tens <= 10;
+            ones <= 10;
+        end if;
+    end if;
+end process;
+
 
     -- Mapování číslic na 7-segmentový kód
     process(tens)
@@ -80,7 +92,7 @@ begin
             when 7 => seg2 <= "1111000";
             when 8 => seg2 <= "0000000";
             when 9 => seg2 <= "0010000";
-            when 10 => seg1 <= "0001001";
+            when 10 => seg2 <= "0001001";
             when others => seg2 <= "0111111"; -- vypnuto
         end case;
     end process;
@@ -98,7 +110,7 @@ begin
             when 7 => seg1 <= "1111000";
             when 8 => seg1 <= "0000000";
             when 9 => seg1 <= "0010000";
-            when 10 => seg1 <= "1111100";
+            when 10 => seg1 <= "1111001";
             when others => seg1 <= "0111111";
         end case;
     end process;
@@ -110,7 +122,7 @@ begin
             when 2 => seg3 <= "1110011"; -- PZ
             when 3 => seg3 <= "1100111"; -- LZ
             when 4 => seg3 <= "1011110"; -- LP
-            when others => seg3 <= "1111111"; -- zhasnuto   
+            when others => seg3 <= "0111111"; -- vypnuto   
         end case;
     end process;
 

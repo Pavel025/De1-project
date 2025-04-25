@@ -3,10 +3,10 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Apr 25 08:56:52 2025
-# Process ID         : 9180
+# Start of session at: Fri Apr 11 10:49:25 2025
+# Process ID         : 19216
 # Current directory  : C:/Users/tadea/Desktop/De1-project/car_parking_sensors
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent10892 C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent15860 C:\Users\tadea\Desktop\De1-project\car_parking_sensors\car_parking_sensors.xpr
 # Log file           : C:/Users/tadea/Desktop/De1-project/car_parking_sensors/vivado.log
 # Journal file       : C:/Users/tadea/Desktop/De1-project/car_parking_sensors\vivado.jou
 # Running On         : LAPTOP-8AMEJRL6
@@ -19,27 +19,11 @@
 # Host memory        : 16857 MB
 # Swap memory        : 1073 MB
 # Total Virtual      : 17931 MB
-# Available Virtual  : 11673 MB
+# Available Virtual  : 7517 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/tadea/Desktop/De1-project/car_parking_sensors/car_parking_sensors.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-source obstacle_tb.tcl
-relaunch_sim
-close_sim
-launch_simulation
-source obstacle_tb.tcl
-close_sim
-launch_simulation
-source obstacle_tb.tcl
-close_sim
-launch_simulation
-source obstacle_tb.tcl
-close_sim
-launch_simulation
-source obstacle_tb.tcl
-close_sim
 launch_simulation
 source obstacle_tb.tcl
 close_sim

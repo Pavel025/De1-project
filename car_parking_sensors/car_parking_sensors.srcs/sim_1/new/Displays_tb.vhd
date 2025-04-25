@@ -75,21 +75,34 @@ begin
         time2 <= std_logic_vector(to_unsigned(2000, 15)); -- 34 cm
         time3 <= std_logic_vector(to_unsigned(3000, 15)); -- 51 cm
         time4 <= std_logic_vector(to_unsigned(4000, 15)); -- 68 cm
-        wait for 20 ns;
+        wait for 100 ns;
 
-        -- Test 2: nejmenší je time4
+        -- Test 2: nejmenší je time2
         time1 <= std_logic_vector(to_unsigned(9000, 15)); -- 153 cm → nad 100 cm
-        time2 <= std_logic_vector(to_unsigned(9000, 15));
+        time2 <= std_logic_vector(to_unsigned(1000, 15));
         time3 <= std_logic_vector(to_unsigned(9000, 15));
-        time4 <= std_logic_vector(to_unsigned(1000, 15)); -- 17 cm
-        wait for 20 ns;
+        time4 <= std_logic_vector(to_unsigned(9000, 15)); -- 17 cm
+        wait for 100 ns;
 
-        -- Test 3: všechny > 100 cm → HI
+        -- Test 3: time3
         time1 <= std_logic_vector(to_unsigned(8000, 15)); -- ~136 cm
-        time2 <= std_logic_vector(to_unsigned(8100, 15));
-        time3 <= std_logic_vector(to_unsigned(8200, 15));
+        time2 <= std_logic_vector(to_unsigned(8200, 15));
+        time3 <= std_logic_vector(to_unsigned(1200, 15));
         time4 <= std_logic_vector(to_unsigned(8300, 15));
-        wait for 20 ns;
+        wait for 100 ns;
+
+-- Test 4: time4
+        time1 <= std_logic_vector(to_unsigned(8000, 15)); -- ~136 cm
+        time2 <= std_logic_vector(to_unsigned(8200, 15));
+        time3 <= std_logic_vector(to_unsigned(8200, 15));
+        time4 <= std_logic_vector(to_unsigned(1300, 15));
+        wait for 100 ns;
+        -- Test5: time5
+        time1 <= std_logic_vector(to_unsigned(800, 15)); -- ~136 cm
+        time2 <= std_logic_vector(to_unsigned(8200, 15));
+        time3 <= std_logic_vector(to_unsigned(8200, 15));
+        time4 <= std_logic_vector(to_unsigned(1300, 15));
+        wait for 100 ns;
 
         wait;
     end process;
