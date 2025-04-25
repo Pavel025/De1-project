@@ -11,13 +11,16 @@ entity Buzzer is
 end Buzzer;
 
 architecture Behavioral of Buzzer is
-    constant CLK_FREQ : integer := 10; -- _000_000 -- 100 M = 1 s => 10 ns  !!!!!!!!!
+    constant CLK_FREQ : integer := 10_000_000; -- -- 100 M = 1 s => 10 ns  !!!!!!!!!
 
     signal dist_internal         : unsigned(14 downto 0);
     signal interval       : integer := 0;  -- ON + OFF
     signal beep_duration  : integer := 0;  -- ON
     signal counter        : integer := 0;
     signal beep_state     : std_logic := '0';
+    signal counter_beep   : integer := 0;
+    signal freg           : integer := 11364;
+    
 begin
 
     dist_internal <= unsigned(dist);
@@ -35,7 +38,7 @@ begin
                 beep_duration <= CLK_FREQ/2;   
             elsif dist_internal < to_unsigned(8190, 15) then -- 1 m
                 interval      <= CLK_FREQ/2;   
-                beep_duration <= CLK_FREQ/2;   -- dat 4 !!!!!!!!
+                beep_duration <= CLK_FREQ/4;   
             else
                 interval      <= 0;       -- OFF
                 beep_duration <= 0;
@@ -54,7 +57,14 @@ begin
                 end if;
 
                 if counter < beep_duration then
-                    beep_state <= '1';  -- beep ON
+                    if counter_beep < freg then
+                         counter_beep <= counter_beep + 1;
+                    else
+                        counter_beep <= 0;
+                        beep_state <= not beep_state;  -- beep ON
+                    end if;
+                    
+                    
                 else
                     beep_state <= '0';  -- beep OFF
                 end if;

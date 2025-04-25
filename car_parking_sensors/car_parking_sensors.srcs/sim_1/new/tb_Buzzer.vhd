@@ -47,7 +47,7 @@ begin
         -- Reset generation
         --  ***EDIT*** Replace YOURRESETSIGNAL below by the name of your reset as I haven't guessed it
         dist <= std_logic_vector(to_unsigned(2000, 15));
-        wait for 400 ns;
+        wait for 300 ns;
         dist <= std_logic_vector(to_unsigned(1000, 15));
         wait for 400 ns;
         dist <= std_logic_vector(to_unsigned(4000, 15));
