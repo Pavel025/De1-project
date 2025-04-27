@@ -1,0 +1,712 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Fri Apr 25 12:37:42 2025
+| Host         : DESKTOP-K2PR65N running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file top_level_timing_summary_routed.rpt -pb top_level_timing_summary_routed.pb -rpx top_level_timing_summary_routed.rpx -warn_on_violation
+| Design       : top_level
+| Device       : 7a50ti-csg324
+| Speed File   : -1L  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                  Violations  
+---------  ----------------  ---------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell  126         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (126)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (309)
+5. checking no_input_delay (1)
+6. checking no_output_delay (2)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (126)
+--------------------------
+ There are 74 register/latch pins with no clock driven by root clock pin: CLK100MHZ (HIGH)
+
+ There are 52 register/latch pins with no clock driven by root clock pin: main0/clk_1MHz_reg/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (309)
+--------------------------------------------------
+ There are 309 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (1)
+------------------------------
+ There is 1 input port with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (2)
+-------------------------------
+ There are 2 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                  311          inf        0.000                      0                  311           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay           311 Endpoints
+Min Delay           311 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 main0/trig_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            TRIG
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.822ns  (logic 4.014ns (68.941%)  route 1.808ns (31.059%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y58          FDRE                         0.000     0.000 r  main0/trig_reg/C
+    SLICE_X0Y58          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  main0/trig_reg/Q
+                         net (fo=1, routed)           1.808     2.264    TRIG_OBUF
+    D18                  OBUF (Prop_obuf_I_O)         3.558     5.822 r  TRIG_OBUF_inst/O
+                         net (fo=0)                   0.000     5.822    TRIG
+    D18                                                               r  TRIG (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/beep_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            BUZZER
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.692ns  (logic 4.020ns (70.626%)  route 1.672ns (29.374%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y57          FDRE                         0.000     0.000 r  buzz/beep_reg/C
+    SLICE_X0Y57          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/beep_reg/Q
+                         net (fo=1, routed)           1.672     2.128    BUZZER_OBUF
+    E18                  OBUF (Prop_obuf_I_O)         3.564     5.692 r  BUZZER_OBUF_inst/O
+                         net (fo=0)                   0.000     5.692    BUZZER
+    E18                                                               r  BUZZER (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/interval_reg[8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/counter_beep_reg[0]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.624ns  (logic 1.853ns (32.949%)  route 3.771ns (67.051%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y60          FDRE                         0.000     0.000 r  buzz/interval_reg[8]/C
+    SLICE_X3Y60          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/interval_reg[8]/Q
+                         net (fo=33, routed)          1.746     2.202    buzz/interval_reg_n_0_[8]
+    SLICE_X3Y49          LUT3 (Prop_lut3_I0_O)        0.124     2.326 r  buzz/beep_state1_carry_i_5/O
+                         net (fo=1, routed)           0.000     2.326    buzz/beep_state1_carry_i_5_n_0
+    SLICE_X3Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     2.727 r  buzz/beep_state1_carry/CO[3]
+                         net (fo=1, routed)           0.001     2.728    buzz/beep_state1_carry_n_0
+    SLICE_X3Y50          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.842 r  buzz/beep_state1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.842    buzz/beep_state1_carry__0_n_0
+    SLICE_X3Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.956 r  buzz/beep_state1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.956    buzz/beep_state1_carry__1_n_0
+    SLICE_X3Y52          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.227 r  buzz/beep_state1_carry__2/CO[0]
+                         net (fo=3, routed)           0.862     4.089    buzz/beep_state1_carry__2_n_3
+    SLICE_X2Y58          LUT3 (Prop_lut3_I1_O)        0.373     4.462 r  buzz/counter_beep[0]_i_1/O
+                         net (fo=32, routed)          1.162     5.624    buzz/counter_beep[0]_i_1_n_0
+    SLICE_X1Y54          FDRE                                         r  buzz/counter_beep_reg[0]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/interval_reg[8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/counter_beep_reg[1]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.624ns  (logic 1.853ns (32.949%)  route 3.771ns (67.051%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y60          FDRE                         0.000     0.000 r  buzz/interval_reg[8]/C
+    SLICE_X3Y60          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/interval_reg[8]/Q
+                         net (fo=33, routed)          1.746     2.202    buzz/interval_reg_n_0_[8]
+    SLICE_X3Y49          LUT3 (Prop_lut3_I0_O)        0.124     2.326 r  buzz/beep_state1_carry_i_5/O
+                         net (fo=1, routed)           0.000     2.326    buzz/beep_state1_carry_i_5_n_0
+    SLICE_X3Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     2.727 r  buzz/beep_state1_carry/CO[3]
+                         net (fo=1, routed)           0.001     2.728    buzz/beep_state1_carry_n_0
+    SLICE_X3Y50          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.842 r  buzz/beep_state1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.842    buzz/beep_state1_carry__0_n_0
+    SLICE_X3Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.956 r  buzz/beep_state1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.956    buzz/beep_state1_carry__1_n_0
+    SLICE_X3Y52          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.227 r  buzz/beep_state1_carry__2/CO[0]
+                         net (fo=3, routed)           0.862     4.089    buzz/beep_state1_carry__2_n_3
+    SLICE_X2Y58          LUT3 (Prop_lut3_I1_O)        0.373     4.462 r  buzz/counter_beep[0]_i_1/O
+                         net (fo=32, routed)          1.162     5.624    buzz/counter_beep[0]_i_1_n_0
+    SLICE_X1Y54          FDRE                                         r  buzz/counter_beep_reg[1]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/interval_reg[8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/counter_beep_reg[2]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.624ns  (logic 1.853ns (32.949%)  route 3.771ns (67.051%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y60          FDRE                         0.000     0.000 r  buzz/interval_reg[8]/C
+    SLICE_X3Y60          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/interval_reg[8]/Q
+                         net (fo=33, routed)          1.746     2.202    buzz/interval_reg_n_0_[8]
+    SLICE_X3Y49          LUT3 (Prop_lut3_I0_O)        0.124     2.326 r  buzz/beep_state1_carry_i_5/O
+                         net (fo=1, routed)           0.000     2.326    buzz/beep_state1_carry_i_5_n_0
+    SLICE_X3Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     2.727 r  buzz/beep_state1_carry/CO[3]
+                         net (fo=1, routed)           0.001     2.728    buzz/beep_state1_carry_n_0
+    SLICE_X3Y50          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.842 r  buzz/beep_state1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.842    buzz/beep_state1_carry__0_n_0
+    SLICE_X3Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.956 r  buzz/beep_state1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.956    buzz/beep_state1_carry__1_n_0
+    SLICE_X3Y52          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.227 r  buzz/beep_state1_carry__2/CO[0]
+                         net (fo=3, routed)           0.862     4.089    buzz/beep_state1_carry__2_n_3
+    SLICE_X2Y58          LUT3 (Prop_lut3_I1_O)        0.373     4.462 r  buzz/counter_beep[0]_i_1/O
+                         net (fo=32, routed)          1.162     5.624    buzz/counter_beep[0]_i_1_n_0
+    SLICE_X1Y54          FDRE                                         r  buzz/counter_beep_reg[2]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/interval_reg[8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/counter_beep_reg[3]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.624ns  (logic 1.853ns (32.949%)  route 3.771ns (67.051%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y60          FDRE                         0.000     0.000 r  buzz/interval_reg[8]/C
+    SLICE_X3Y60          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/interval_reg[8]/Q
+                         net (fo=33, routed)          1.746     2.202    buzz/interval_reg_n_0_[8]
+    SLICE_X3Y49          LUT3 (Prop_lut3_I0_O)        0.124     2.326 r  buzz/beep_state1_carry_i_5/O
+                         net (fo=1, routed)           0.000     2.326    buzz/beep_state1_carry_i_5_n_0
+    SLICE_X3Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     2.727 r  buzz/beep_state1_carry/CO[3]
+                         net (fo=1, routed)           0.001     2.728    buzz/beep_state1_carry_n_0
+    SLICE_X3Y50          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.842 r  buzz/beep_state1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.842    buzz/beep_state1_carry__0_n_0
+    SLICE_X3Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.956 r  buzz/beep_state1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.956    buzz/beep_state1_carry__1_n_0
+    SLICE_X3Y52          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.227 r  buzz/beep_state1_carry__2/CO[0]
+                         net (fo=3, routed)           0.862     4.089    buzz/beep_state1_carry__2_n_3
+    SLICE_X2Y58          LUT3 (Prop_lut3_I1_O)        0.373     4.462 r  buzz/counter_beep[0]_i_1/O
+                         net (fo=32, routed)          1.162     5.624    buzz/counter_beep[0]_i_1_n_0
+    SLICE_X1Y54          FDRE                                         r  buzz/counter_beep_reg[3]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/interval_reg[8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/counter_beep_reg[10]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.539ns  (logic 1.853ns (33.454%)  route 3.686ns (66.546%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y60          FDRE                         0.000     0.000 r  buzz/interval_reg[8]/C
+    SLICE_X3Y60          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/interval_reg[8]/Q
+                         net (fo=33, routed)          1.746     2.202    buzz/interval_reg_n_0_[8]
+    SLICE_X3Y49          LUT3 (Prop_lut3_I0_O)        0.124     2.326 r  buzz/beep_state1_carry_i_5/O
+                         net (fo=1, routed)           0.000     2.326    buzz/beep_state1_carry_i_5_n_0
+    SLICE_X3Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     2.727 r  buzz/beep_state1_carry/CO[3]
+                         net (fo=1, routed)           0.001     2.728    buzz/beep_state1_carry_n_0
+    SLICE_X3Y50          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.842 r  buzz/beep_state1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.842    buzz/beep_state1_carry__0_n_0
+    SLICE_X3Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.956 r  buzz/beep_state1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.956    buzz/beep_state1_carry__1_n_0
+    SLICE_X3Y52          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.227 r  buzz/beep_state1_carry__2/CO[0]
+                         net (fo=3, routed)           0.862     4.089    buzz/beep_state1_carry__2_n_3
+    SLICE_X2Y58          LUT3 (Prop_lut3_I1_O)        0.373     4.462 r  buzz/counter_beep[0]_i_1/O
+                         net (fo=32, routed)          1.077     5.539    buzz/counter_beep[0]_i_1_n_0
+    SLICE_X1Y56          FDRE                                         r  buzz/counter_beep_reg[10]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/interval_reg[8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/counter_beep_reg[11]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.539ns  (logic 1.853ns (33.454%)  route 3.686ns (66.546%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y60          FDRE                         0.000     0.000 r  buzz/interval_reg[8]/C
+    SLICE_X3Y60          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/interval_reg[8]/Q
+                         net (fo=33, routed)          1.746     2.202    buzz/interval_reg_n_0_[8]
+    SLICE_X3Y49          LUT3 (Prop_lut3_I0_O)        0.124     2.326 r  buzz/beep_state1_carry_i_5/O
+                         net (fo=1, routed)           0.000     2.326    buzz/beep_state1_carry_i_5_n_0
+    SLICE_X3Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     2.727 r  buzz/beep_state1_carry/CO[3]
+                         net (fo=1, routed)           0.001     2.728    buzz/beep_state1_carry_n_0
+    SLICE_X3Y50          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.842 r  buzz/beep_state1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.842    buzz/beep_state1_carry__0_n_0
+    SLICE_X3Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.956 r  buzz/beep_state1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.956    buzz/beep_state1_carry__1_n_0
+    SLICE_X3Y52          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.227 r  buzz/beep_state1_carry__2/CO[0]
+                         net (fo=3, routed)           0.862     4.089    buzz/beep_state1_carry__2_n_3
+    SLICE_X2Y58          LUT3 (Prop_lut3_I1_O)        0.373     4.462 r  buzz/counter_beep[0]_i_1/O
+                         net (fo=32, routed)          1.077     5.539    buzz/counter_beep[0]_i_1_n_0
+    SLICE_X1Y56          FDRE                                         r  buzz/counter_beep_reg[11]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/interval_reg[8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/counter_beep_reg[8]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.539ns  (logic 1.853ns (33.454%)  route 3.686ns (66.546%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y60          FDRE                         0.000     0.000 r  buzz/interval_reg[8]/C
+    SLICE_X3Y60          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/interval_reg[8]/Q
+                         net (fo=33, routed)          1.746     2.202    buzz/interval_reg_n_0_[8]
+    SLICE_X3Y49          LUT3 (Prop_lut3_I0_O)        0.124     2.326 r  buzz/beep_state1_carry_i_5/O
+                         net (fo=1, routed)           0.000     2.326    buzz/beep_state1_carry_i_5_n_0
+    SLICE_X3Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     2.727 r  buzz/beep_state1_carry/CO[3]
+                         net (fo=1, routed)           0.001     2.728    buzz/beep_state1_carry_n_0
+    SLICE_X3Y50          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.842 r  buzz/beep_state1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.842    buzz/beep_state1_carry__0_n_0
+    SLICE_X3Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.956 r  buzz/beep_state1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.956    buzz/beep_state1_carry__1_n_0
+    SLICE_X3Y52          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.227 r  buzz/beep_state1_carry__2/CO[0]
+                         net (fo=3, routed)           0.862     4.089    buzz/beep_state1_carry__2_n_3
+    SLICE_X2Y58          LUT3 (Prop_lut3_I1_O)        0.373     4.462 r  buzz/counter_beep[0]_i_1/O
+                         net (fo=32, routed)          1.077     5.539    buzz/counter_beep[0]_i_1_n_0
+    SLICE_X1Y56          FDRE                                         r  buzz/counter_beep_reg[8]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/interval_reg[8]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/counter_beep_reg[9]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        5.539ns  (logic 1.853ns (33.454%)  route 3.686ns (66.546%))
+  Logic Levels:           7  (CARRY4=4 FDRE=1 LUT3=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y60          FDRE                         0.000     0.000 r  buzz/interval_reg[8]/C
+    SLICE_X3Y60          FDRE (Prop_fdre_C_Q)         0.456     0.456 r  buzz/interval_reg[8]/Q
+                         net (fo=33, routed)          1.746     2.202    buzz/interval_reg_n_0_[8]
+    SLICE_X3Y49          LUT3 (Prop_lut3_I0_O)        0.124     2.326 r  buzz/beep_state1_carry_i_5/O
+                         net (fo=1, routed)           0.000     2.326    buzz/beep_state1_carry_i_5_n_0
+    SLICE_X3Y49          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     2.727 r  buzz/beep_state1_carry/CO[3]
+                         net (fo=1, routed)           0.001     2.728    buzz/beep_state1_carry_n_0
+    SLICE_X3Y50          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.842 r  buzz/beep_state1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     2.842    buzz/beep_state1_carry__0_n_0
+    SLICE_X3Y51          CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     2.956 r  buzz/beep_state1_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     2.956    buzz/beep_state1_carry__1_n_0
+    SLICE_X3Y52          CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     3.227 r  buzz/beep_state1_carry__2/CO[0]
+                         net (fo=3, routed)           0.862     4.089    buzz/beep_state1_carry__2_n_3
+    SLICE_X2Y58          LUT3 (Prop_lut3_I1_O)        0.373     4.462 r  buzz/counter_beep[0]_i_1/O
+                         net (fo=32, routed)          1.077     5.539    buzz/counter_beep[0]_i_1_n_0
+    SLICE_X1Y56          FDRE                                         r  buzz/counter_beep_reg[9]/R
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 main0/sig_count_reg[13]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            main0/count_reg[13]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.266ns  (logic 0.141ns (52.980%)  route 0.125ns (47.020%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y62          FDRE                         0.000     0.000 r  main0/sig_count_reg[13]/C
+    SLICE_X4Y62          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  main0/sig_count_reg[13]/Q
+                         net (fo=3, routed)           0.125     0.266    main0/sig_count_reg[13]
+    SLICE_X5Y60          FDRE                                         r  main0/count_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 main0/sig_count_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            main0/count_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.270ns  (logic 0.141ns (52.204%)  route 0.129ns (47.796%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y59          FDRE                         0.000     0.000 r  main0/sig_count_reg[1]/C
+    SLICE_X4Y59          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  main0/sig_count_reg[1]/Q
+                         net (fo=3, routed)           0.129     0.270    main0/sig_count_reg[1]
+    SLICE_X5Y59          FDRE                                         r  main0/count_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 buzz/beep_state_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/beep_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.282ns  (logic 0.164ns (58.163%)  route 0.118ns (41.837%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y57          FDRE                         0.000     0.000 r  buzz/beep_state_reg/C
+    SLICE_X2Y57          FDRE (Prop_fdre_C_Q)         0.164     0.164 r  buzz/beep_state_reg/Q
+                         net (fo=2, routed)           0.118     0.282    buzz/beep_state
+    SLICE_X0Y57          FDRE                                         r  buzz/beep_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 main0/sig_count_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            main0/count_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.283ns  (logic 0.141ns (49.782%)  route 0.142ns (50.218%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y59          FDRE                         0.000     0.000 r  main0/sig_count_reg[3]/C
+    SLICE_X4Y59          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  main0/sig_count_reg[3]/Q
+                         net (fo=3, routed)           0.142     0.283    main0/sig_count_reg[3]
+    SLICE_X5Y59          FDRE                                         r  main0/count_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 main0/sig_count_reg[4]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            main0/count_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.285ns  (logic 0.141ns (49.461%)  route 0.144ns (50.539%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y60          FDRE                         0.000     0.000 r  main0/sig_count_reg[4]/C
+    SLICE_X4Y60          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  main0/sig_count_reg[4]/Q
+                         net (fo=3, routed)           0.144     0.285    main0/sig_count_reg[4]
+    SLICE_X5Y59          FDRE                                         r  main0/count_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 main0/count_reg[13]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            buzz/interval_reg[8]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.297ns  (logic 0.186ns (62.707%)  route 0.111ns (37.293%))
+  Logic Levels:           2  (FDRE=1 LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y60          FDRE                         0.000     0.000 r  main0/count_reg[13]/C
+    SLICE_X5Y60          FDRE (Prop_fdre_C_Q)         0.141     0.141 f  main0/count_reg[13]/Q
+                         net (fo=1, routed)           0.111     0.252    main0/count[13]
+    SLICE_X3Y60          LUT5 (Prop_lut5_I4_O)        0.045     0.297 r  main0/interval[8]_i_1/O
+                         net (fo=1, routed)           0.000     0.297    buzz/interval_reg[8]_0
+    SLICE_X3Y60          FDRE                                         r  buzz/interval_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 main0/sig_count_reg[5]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            main0/count_reg[5]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.333ns  (logic 0.141ns (42.291%)  route 0.192ns (57.709%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y60          FDRE                         0.000     0.000 r  main0/sig_count_reg[5]/C
+    SLICE_X4Y60          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  main0/sig_count_reg[5]/Q
+                         net (fo=3, routed)           0.192     0.333    main0/sig_count_reg[5]
+    SLICE_X5Y60          FDRE                                         r  main0/count_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 main0/sig_count_reg[9]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            main0/count_reg[9]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.336ns  (logic 0.141ns (41.983%)  route 0.195ns (58.017%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y61          FDRE                         0.000     0.000 r  main0/sig_count_reg[9]/C
+    SLICE_X4Y61          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  main0/sig_count_reg[9]/Q
+                         net (fo=3, routed)           0.195     0.336    main0/sig_count_reg[9]
+    SLICE_X5Y61          FDRE                                         r  main0/count_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 main0/trig_active_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            main0/counter_60ms_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.345ns  (logic 0.186ns (53.860%)  route 0.159ns (46.140%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y58          FDRE                         0.000     0.000 r  main0/trig_active_reg/C
+    SLICE_X7Y58          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  main0/trig_active_reg/Q
+                         net (fo=5, routed)           0.159     0.300    main0/trig_active_reg_n_0
+    SLICE_X5Y58          LUT6 (Prop_lut6_I4_O)        0.045     0.345 r  main0/counter_60ms[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.345    main0/counter_60ms[0]_i_1_n_0
+    SLICE_X5Y58          FDRE                                         r  main0/counter_60ms_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 main0/counter_10us_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            main0/trig_active_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.345ns  (logic 0.186ns (53.854%)  route 0.159ns (46.146%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y59          FDRE                         0.000     0.000 r  main0/counter_10us_reg[0]/C
+    SLICE_X7Y59          FDRE (Prop_fdre_C_Q)         0.141     0.141 f  main0/counter_10us_reg[0]/Q
+                         net (fo=5, routed)           0.159     0.300    main0/counter_10us_reg_n_0_[0]
+    SLICE_X7Y58          LUT6 (Prop_lut6_I0_O)        0.045     0.345 r  main0/trig_active_i_1/O
+                         net (fo=1, routed)           0.000     0.345    main0/trig_active_i_1_n_0
+    SLICE_X7Y58          FDRE                                         r  main0/trig_active_reg/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
