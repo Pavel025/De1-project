@@ -13,7 +13,7 @@ end my_buzzer;
 architecture Behavioral of my_buzzer is
     constant CLK_FREQ : integer := 10_000_000; -- -- 100 M = 1 s => 10 ns  !!!!!!!!!
 
-    signal dist_internal         : unsigned(14 downto 0);
+    signal dist_internal  : unsigned(14 downto 0);
     signal interval       : integer := 0;  -- ON + OFF
     signal beep_duration  : integer := 0;  -- ON
     signal counter        : integer := 0;
