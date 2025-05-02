@@ -77,6 +77,8 @@ OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
   C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/main.vhd
   C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/my_buzzer.vhd
+  C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/my_led.vhd
+  C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/seg_disp.vhd
   C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/top_level.vhd
 }
 OPTRACE "Adding files" END { }

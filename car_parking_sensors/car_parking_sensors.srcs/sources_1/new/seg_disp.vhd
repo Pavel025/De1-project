@@ -23,7 +23,7 @@ architecture Behavioral of seg_disp is
     
     signal clk_1kHz_counter           : unsigned(16 downto 0) := (others => '0');
     signal local_multiplex            : unsigned(7 downto 0) := (others => '0');
-    signal process_num                : unsigned(1 downto 0) := b"01";
+    signal process_num                : std_logic_vector(1 downto 0) := b"01";
 
 begin
 
@@ -72,22 +72,26 @@ begin
         end if;
         
         -- Multiplexování
-        if clk_1KHz_counter = 999999 then
-            if process_num = 1 then
+        if clk_1kHz_counter = 99999 then
+            if process_num = "01" then
                 process_num <= b"10";
                 clk_1kHz_counter <= (others => '0');
-                local_multiplex <= b"1111_1110";    -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!
-            elsif process_num = 2 then
-                process_num <= b"11";
-                clk_1kHz_counter <= (others => '0');
-                local_multiplex <= b"1111_1101";     -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!
-            elsif process_num = 3 then
-                process_num <= b"01";
-                clk_1kHz_counter <= (others => '0');
-                local_multiplex <= b"1111_0111";     -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!    
+                local_multiplex <= b"1111_1101";    -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!
+            else
+                if process_num = "10" then
+                    process_num <= b"11";
+                    clk_1kHz_counter <= (others => '0');
+                    local_multiplex <= b"1111_0111";     -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!
+                else
+                    if process_num = "11" then
+                        process_num <= b"01";
+                        clk_1kHz_counter <= (others => '0');
+                        local_multiplex <= b"1111_1110";     -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    end if;
+                end if;    
             end if;
         else
-            clk_1KHz_counter <= clk_1KHz_counter + 1;
+            clk_1kHz_counter <= clk_1kHz_counter + 1;
         end if;
         multiplex <= std_logic_vector(local_multiplex);
     end if;
@@ -95,60 +99,51 @@ end process;
 
 
     -- Mapování číslic na 7-segmentový kód
-    process(ones)       -- process_num 1
-    begin
-        if process_num = 1 then
+process(process_num, ones, tens, min_sensor)
+begin
+    case process_num is
+        when "01" =>  -- jedničky
             case ones is
-                when 0 => seg1 <= "1000000";
-                when 1 => seg1 <= "1111001";
-                when 2 => seg1 <= "0100100";
-                when 3 => seg1 <= "0110000";
-                when 4 => seg1 <= "0011001";
-                when 5 => seg1 <= "0010010";
-                when 6 => seg1 <= "0000010";
-                when 7 => seg1 <= "1111000";
-                when 8 => seg1 <= "0000000";
-                when 9 => seg1 <= "0010000";
-                when 10 => seg1 <= "1111001";
-                when others => seg1 <= "0111111";
+                when 0 => seg <= "0000001";
+                when 1 => seg <= "1001111";
+                when 2 => seg <= "0010010";
+                when 3 => seg <= "0000110";
+                when 4 => seg <= "1001100";
+                when 5 => seg <= "0100100";
+                when 6 => seg <= "0100000";
+                when 7 => seg <= "0001111";
+                when 8 => seg <= "0000000";
+                when 9 => seg <= "0000100";
+                when others => seg <= "1111110";
             end case;
-            seg <= std_logic_vector(seg1);
-        end if;
-    end process;
-    
-    process(tens)       -- process_num 2
-    begin
-        if process_num = 2 then
+
+        when "10" =>  -- desítky
             case tens is
-                when 0 => seg2 <= "1000000";
-                when 1 => seg2 <= "1111001";
-                when 2 => seg2 <= "0100100";
-                when 3 => seg2 <= "0110000";
-                when 4 => seg2 <= "0011001";
-                when 5 => seg2 <= "0010010";
-                when 6 => seg2 <= "0000010";
-                when 7 => seg2 <= "1111000";
-                when 8 => seg2 <= "0000000";
-                when 9 => seg2 <= "0010000";
-                when 10 => seg2 <= "0001001";
-                when others => seg2 <= "0111111"; -- vypnuto
+                when 0 => seg <= "0000001";
+                when 1 => seg <= "1001111";
+                when 2 => seg <= "0010010";
+                when 3 => seg <= "0000110";
+                when 4 => seg <= "1001100";
+                when 5 => seg <= "0100100";
+                when 6 => seg <= "0100000";
+                when 7 => seg <= "0001111";
+                when 8 => seg <= "0000000";
+                when 9 => seg <= "0000100";
+                when others => seg <= "1111110";
             end case;
-            seg <= std_logic_vector(seg2);
-        end if;
-    end process;
-        
-    process(min_sensor)  -- process_num 3
-    begin
-        if process_num = 3 then
+
+        when "11" =>  -- směr
             case min_sensor is
-                when 1 => seg3 <= "1111100"; -- PP
-                when 2 => seg3 <= "1110011"; -- PZ
-                when 3 => seg3 <= "1100111"; -- LZ
-                when 4 => seg3 <= "1011110"; -- LP
-                when others => seg3 <= "0111111"; -- vypnuto   
+                when 1 => seg <= "0011111"; -- PP
+                when 2 => seg <= "1100111"; -- PZ
+                when 3 => seg <= "1110011"; -- LZ
+                when 4 => seg <= "0111101"; -- LP
+                when others => seg <= "0111111";
             end case;
-            seg <= std_logic_vector(seg3);
-        end if;
-    end process;
+
+        when others =>
+            seg <= "1111111"; -- všechno zhasne
+    end case;
+end process;
 
 end Behavioral;

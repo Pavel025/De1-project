@@ -18,9 +18,9 @@ entity top_level is
         
         BUZZER    : out STD_LOGIC;
         
-        LED_R     : out STD_LOGIC_VECTOR(7 downto 0);
-        LED_G     : out STD_LOGIC_VECTOR(7 downto 0);
-        LED_B     : out STD_LOGIC_VECTOR(7 downto 0);
+        LED_R     : out STD_LOGIC;
+        LED_G     : out STD_LOGIC;
+        LED_B     : out STD_LOGIC;
         
         CA        : out   std_logic;                     
         CB        : out   std_logic;                     
@@ -60,7 +60,7 @@ architecture Behavioral of top_level is
     component my_buzzer is
         Port (
             clk   : in  STD_LOGIC;
-            dist  : in  STD_LOGIC_VECTOR(14 downto 0);  -- 32 767 ~ 4 m
+            dist  : in  STD_LOGIC_VECTOR(8 downto 0);  -- 32 767 ~ 4 m
             beep  : out STD_LOGIC
         );
     end component;
@@ -68,10 +68,10 @@ architecture Behavioral of top_level is
     component my_led is
         Port (
             clk      : in STD_LOGIC;
-            distance : in STD_LOGIC_VECTOR(14 downto 0);   -- cm distance 
-            LED16_R  : out STD_LOGIC_VECTOR(7 downto 0);   -- red 
-            LED16_G  : out STD_LOGIC_VECTOR(7 downto 0);   -- green 
-            LED16_B  : out STD_LOGIC_VECTOR(7 downto 0)    -- blue 
+            distance : in STD_LOGIC_VECTOR(8 downto 0);   -- cm distance 
+            red  :     out STD_LOGIC;   -- red 
+            green  :   out STD_LOGIC;   -- green 
+            blue  :    out STD_LOGIC    -- blue 
         );
     end component;
     
@@ -128,9 +128,9 @@ begin
          port map (
             clk => CLK100MHZ,
             distance => dist_tmp,   -- cm distance 
-            LED16_R => LED_R,   -- red 
-            LED16_G => LED_G,   -- green 
-            LED16_B => LED_B    -- blue 
+            red => LED_R,   -- red 
+            green => LED_G,   -- green 
+            blue => LED_B    -- blue 
             );
             
     display : component seg_disp
