@@ -218,11 +218,18 @@ Výstupy
   - seg -- vykresluje směr a vzdálenost nejbližší překážky v centimetrech. Pouze hodnoty 00-99.
 
 Princip:
-Ze čtyř časových hodnot získaných ze senzorů po přepočtu na vzdálenost vybere nejnižší hodnotu(s každou hranou CLK). Poté se zpracuje tak že pokud je nižší než 100cm pak ji rozdělíme na desítky a jednotky. Ty spolu se směrem převádí na signál pro každou segmentovku. Tyto 3 výstupní siganály se pak s periodou 1 KHz střídají na výstupu seg (pro oko se tak zdá že svítí všechny zaráz).
+Ze čtyř časových hodnot získaných ze senzorů po přepočtu na vzdálenost vybere nejnižší hodnotu(s každou náběžnou hranou CLK). Poté se zpracuje tak že pokud je nižší než 100cm pak ji rozdělíme na desítky a jednotky. Ty spolu se směrem převádí na signál pro každou segmentovku. Tyto 3 výstupní siganály se pak s periodou 1 KHz střídají na výstupu seg (pro oko se tak zdá že svítí všechny zaráz).
+
 ![20250502_094255](https://github.com/user-attachments/assets/efab28f1-9def-4b59-a3f6-0f94c06b3759)
 
-Zde je pro ověření simulace všech 3 výstupních signálů:
+Simulace všech 3 výstupních signálů:
 ![Snímek obrazovky 2025-05-08 225739](https://github.com/user-attachments/assets/306a3084-6c54-4104-ba78-0aa7fb58f637)
+Odkazy:\
+Source code:\
+https://github.com/Pavel025/De1-project/blob/Beep/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/Buzzer.vhd \
+Testbench:\
+https://github.com/Pavel025/De1-project/blob/Beep/car_parking_sensors/car_parking_sensors.srcs/sim_1/new/tb_Buzzer.vhd
+
 ### Top level
 
 #### Vstupy
