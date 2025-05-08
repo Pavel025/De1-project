@@ -214,11 +214,13 @@ Vstupy:
   - time4 -- čas od senzoru 4
   - clk
 
-Výstupy
+Výstupy:
   - seg -- vykresluje směr a vzdálenost nejbližší překážky v centimetrech. Pouze hodnoty 00-99.
 
 Blokové schéma: 
-![image](https://github.com/user-attachments/assets/77efeddf-bd64-4260-a4ef-6326792cd30b)
+
+![ahhh drawio](https://github.com/user-attachments/assets/7742eb75-8ae6-4e68-aece-44949003a91e)
+
 
 
 Princip:
