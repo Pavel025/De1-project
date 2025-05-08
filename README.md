@@ -30,6 +30,9 @@ Simulace reakce programu na délku impulzu na vstupy echo1 - echo4:
 Simulace generování impulzů na výstupy trig1 - trig4:
 ![Simulace trig](trig_sim.png)
 
+### Vývojový diagram
+![Main vývojový diagram](main_diagram.png)
+
 
 
 ## Top level
