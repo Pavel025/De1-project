@@ -8,9 +8,13 @@
 
 ## Abstract
 
+V tomto projektu jsme se zabývali naprogramováním FPGA desky Nexys A7-50T v programu Vivado v jazyce VHDL. Naše zařízení mělo za cíl měřit vzdálenost do čtyř směrů a tyto hodnoty předat uživateli. Pro vizualizaci jsme se rozhodli vypsat na sedmisegmentovém displeji hodnotu minimální vzdálenosti a zobrazit jaký sensor je nejblíže překážce. Navíc, pro rychlejší upozornění uživatele se mění barva na RGB LED od zelené k červené a bzučák vydává častější a častější pípání, tak jak to bývá v autech.
+
 ## Demonstrační video
+
 Krátká ukázka funkčnosti zařízení\
 https://www.youtube.com/watch?v=OFte7NRmbUw
+
 ## Popis použitého hardwaru
 ### Nexys A7-50T
 Nexys A7-50T je multifunkční FPGA deska
@@ -55,6 +59,43 @@ Modul umožňující převod logické úrovně mezi 3,3V a 5V logikou
 
 
 ## Popis Softwaru a simulace
+
+### Main
+
+#### Vstupy
+
+      clk    : in STD_LOGIC;  -- Hodinový signál
+      echo1  : in STD_LOGIC;  -- signál přijímaný ze senzoru 1
+      echo2  : in STD_LOGIC;  -- signál přijímaný ze senzoru 2
+      echo3  : in STD_LOGIC;  -- signál přijímaný ze senzoru 3
+      echo4  : in STD_LOGIC;  -- signál přijímaný ze senzoru 4
+
+#### Výstupy
+
+      trig1  : out STD_LOGIC; -- signál pro ovládání senzoru 1
+      trig2  : out STD_LOGIC; -- signál pro ovládání senzoru 2
+      trig3  : out STD_LOGIC; -- signál pro ovládání senzoru 3
+      trig4  : out STD_LOGIC; -- signál pro ovládání senzoru 4
+
+      count1 : out STD_LOGIC_VECTOR(n_bits downto 0); -- čas aktivního signálu echo1 v us
+      count2 : out STD_LOGIC_VECTOR(n_bits downto 0); -- čas aktivního signálu echo1 v us
+      count3 : out STD_LOGIC_VECTOR(n_bits downto 0); -- čas aktivního signálu echo1 v us
+      count4 : out STD_LOGIC_VECTOR(n_bits downto 0); -- čas aktivního signálu echo1 v us
+
+#### Popis funkce
+Tento source file ovládá ultrazvukové senzory a přijímá jejich výstup pro další zpracování. Každých 60 ms vyšle krátký 10 mikrosekundový impuls na výstupy trig1 - trig4. Aktivací senzoru se na vstupech echo1 - echo4 objeví logická 1, na tak dlouho, dokud senzor nezaznamená odražený signál. Tato doba se měří pomocí hodinového signálu a po jejím skončení se její hodnota ukládá na výstupy count1 - count4.
+
+#### Simulace
+Simulace reakce programu na délku impulzu na vstupy echo1 - echo4:
+![Simulace echo](echo_sim.png)
+
+Simulace generování impulzů na výstupy trig1 - trig4:
+![Simulace trig](trig_sim.png)
+
+### Vývojový diagram
+![Main vývojový diagram](main_diagram.png)
+
+
 
 ### LEDs
 
@@ -101,6 +142,9 @@ Signály pro duty cycle (intenzita) každého kanálu
   
   Upravuji PWM šířku, kde nastavuji číslo od 0 do 255, = Duty cycle
 
+Vývojový diagram
+
+![alt text](image-4.png)
 
 Simulace 
 
@@ -111,12 +155,88 @@ RGB na desce
 ![RGB na desce](https://github.com/user-attachments/assets/4120faa5-01e3-46eb-9500-818254c9b527)
 
 
-### 7-segment
+
 
 ### Bzučák
-![buzzer-sim](Screenshot2025-05-08072512.png)
+Pro zvukové upozornění slouží bzučák s proměnnou délkou pípání a mezery v závislosti na minimální vzdálenosti překážky
+
+Vstupy
+  -  clk   : in  std_logic;   -- clock (100 MHz)
+  -  dist  : in  STD_LOGIC_VECTOR(8 downto 0);  -- vzdálenost v cm       
+  
+
+Výstupy
+  -  beep  : out STD_LOGIC
+    
+
+Pomocné signály
+
+  - constant CLK_FREQ : integer := 100_000_000; --délka 1s
+
+  -  signal dist_internal  : unsigned(8 downto 0); -- vnitřní proměnná pro dist
+  -  signal interval       : integer := 0;  -- ON + OFF
+  -  signal beep_duration  : integer := 0;  -- ON
+  -  signal counter        : integer := 0;  -- čítač interval
+  -  signal beep_state     : std_logic := '0'; -- logická proměnná pro zápis do výstupu beep
+  -  signal counter_beep   : integer := 0;  -- čítač beep_duration
+  -  signal freg           : integer := 11364;  -- frekvence bzučáku cca 4400 Hz
+
+Na následujícím obrázku je možné vidět vývojový diagram programu
+
 ![alt text](image-3.png)
 
+Simulace funkčnosti:
+
+![buzzer-sim](image-5.png)
+
+Umístění bzučáku v zapojení:
+
+![alt text](20250430_152844.jpg)
+
+Odkazy:\
+Source code:\
+https://github.com/Pavel025/De1-project/blob/Beep/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/Buzzer.vhd \
+Testbench:\
+https://github.com/Pavel025/De1-project/blob/Beep/car_parking_sensors/car_parking_sensors.srcs/sim_1/new/tb_Buzzer.vhd
+
+### 7-segment
+
+### Top level
+
+#### Vstupy
+    CLK100MHZ : in STD_LOGIC;
+    ECHO1     : in STD_LOGIC;
+    ECHO2     : in STD_LOGIC;
+    ECHO3     : in STD_LOGIC;
+    ECHO4     : in STD_LOGIC;
+
+#### Výstupy
+    TRIG1     : out STD_LOGIC;
+    TRIG2     : out STD_LOGIC;
+    TRIG3     : out STD_LOGIC;
+    TRIG4     : out STD_LOGIC;
+    
+    BUZZER    : out STD_LOGIC;
+    
+    LED_R     : out STD_LOGIC;
+    LED_G     : out STD_LOGIC;
+    LED_B     : out STD_LOGIC;
+    
+    CA        : out   std_logic;                     
+    CB        : out   std_logic;                     
+    CC        : out   std_logic;                     
+    CD        : out   std_logic;                     
+    CE        : out   std_logic;                     
+    CF        : out   std_logic;                     
+    CG        : out   std_logic;                     
+    DP        : out   std_logic;                     
+    AN        : out   std_logic_vector(7 downto 0)
+
+#### Popis funkce
+Top level propojuje všechny ostatní části programu
+
+#### Schéma
+![Schéma](schema.png)
 
 ## Reference
 https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual?srsltid=AfmBOoqcXasRu5ogYykyAvmd7k7G_U6G6f-TFImJu0mmkMR8xbL4xAxm
@@ -129,21 +249,3 @@ https://microcontrollerslab.com/buzzer-module-interfacing-arduino-sound-code/
 
 https://robu.in/wp-content/uploads/2016/05/i2c-logic-level-converter-4-channel-bi-directional-module.pdf
 
-Výstupy
-  - 7-seg
-  - bzučák
-  - LEDky/RGB
-
-Main - senzor
-
-Top level
---------------------------------------
-7-seg
-  - 3 segmentovky na vzdálenost
-  - 1 na zobrazení aktivních senzorů
-
-Bzučák
-  - od 1 metru
-  - po 0,2 m zvyšovat frekvenci?
-
-![Snímek obrazovky](Snímek%20obrazovky%202025-04-10%20101607.png)
