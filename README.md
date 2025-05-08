@@ -95,7 +95,11 @@ Simulace generování impulzů na výstupy trig1 - trig4:
 ### Vývojový diagram
 ![Main vývojový diagram](main_diagram.png)
 
-
+Odkazy:\
+Source code:\
+https://github.com/Pavel025/De1-project/blob/branch_main/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/main.vhd \
+Testbench:\
+https://github.com/Pavel025/De1-project/blob/branch_main/car_parking_sensors/car_parking_sensors.srcs/sim_1/new/main_tb.vhd
 
 ### LEDs
 
