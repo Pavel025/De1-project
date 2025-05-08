@@ -1,3 +1,31 @@
+# Topic 4: Ultrasound sensor(s) controller (HS-SR04)
+Členové týmu
+
+1. Martin Čontoš (zodpovědný za )
+2. Tadeáš Fojtách (zodpovědný za )
+3. Pavel Horský (zodpovědný za )
+4. Karel Matoušek (zodpovědný za )
+
+## Abstract
+
+## Demonstrační video
+
+## Popis hardwaru
+
+## Popis Softwaru
+
+## Simulace
+
+### LEDs
+
+### 7-segment
+
+### Bzučák
+![Bzucak-sim](Screenshot 2025-05-08 072512.png)
+
+## Reference
+
+
 Výstupy
   - 7-seg
   - bzučák
