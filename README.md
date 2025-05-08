@@ -21,8 +21,8 @@
 ### 7-segment
 
 ### Bzučák
-![Bzucak-sim](Screenshot 2025-05-08 072512.png)
-
+![Bzucak-sim](https://github.com/Pavel025/De1-project/blob/readme/Screenshot%202025-05-08%20072512.png)
+![buzzer-sim](Screenshot 2025-05-08 072512.png)
 ## Reference
 
 
