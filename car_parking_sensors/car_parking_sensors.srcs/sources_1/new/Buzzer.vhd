@@ -2,24 +2,24 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity Buzzer is    --!!!!!!!!!!!!!
+entity buzzer is    
     Port (
         clk   : in  std_logic;
-        dist  : in  STD_LOGIC_VECTOR(8 downto 0);  -- 32 767 ~ 4 m              --!!!!!!!!!!!!! v top levlu nastavit 8 downto 0 i u led
+        dist  : in  STD_LOGIC_VECTOR(8 downto 0);  -- v metrech         
         beep  : out STD_LOGIC
     );
-end Buzzer;     --!!!!!!!!!!!!!
+end buzzer;   
 
-architecture Behavioral of Buzzer is        --!!!!!!!!!!!!!
-    constant CLK_FREQ : integer := 100_000_000; -- 100 M = 1 s => 10 ns 
+architecture Behavioral of buzzer is       
+    constant CLK_FREQ : integer := 100; --100_000_000   --100 M = 1 s => 10 ns 
 
-    signal dist_internal         : unsigned(8 downto 0);
+    signal dist_internal  : unsigned(8 downto 0);
     signal interval       : integer := 0;  -- ON + OFF
     signal beep_duration  : integer := 0;  -- ON
     signal counter        : integer := 0;
     signal beep_state     : std_logic := '0';
     signal counter_beep   : integer := 0;
-    signal freg           : integer := 11364;
+    signal freg           : integer := 1;  --11364;
     
 begin
 
@@ -29,7 +29,7 @@ begin
     begin
         if rising_edge(clk) then
 
-            -- délky intervalů
+            --nastavení délky intervalů
             if dist_internal < to_unsigned(25, 8) then     --   z. z. z. z.
                 interval      <= CLK_FREQ/2;   
                 beep_duration <= CLK_FREQ/4;  
@@ -50,18 +50,18 @@ begin
                 counter <= 0;
                 beep_state <= '0';
             else
-                if counter < interval then
+                if counter < interval then      --čítač pro periodu
                     counter <= counter + 1;
                 else
                     counter <= 0;
                 end if;
 
-                if counter < beep_duration then
+                if counter < beep_duration then     --čítač pro PWM pro cca 4400 Hz
                     if counter_beep < freg then
                          counter_beep <= counter_beep + 1;
                     else
                         counter_beep <= 0;
-                        beep_state <= not beep_state;  -- beep ON
+                        beep_state <= not beep_state; 
                     end if;
                     
                     

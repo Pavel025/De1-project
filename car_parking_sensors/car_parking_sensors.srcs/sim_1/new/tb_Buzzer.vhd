@@ -14,12 +14,12 @@ architecture tb of tb_Buzzer is
 
     component Buzzer
         port (clk  : in std_logic;
-              dist : in std_logic_vector (14 downto 0);
+              dist : in std_logic_vector (8 downto 0);
               beep : out std_logic);
     end component;
 
     signal clk  : std_logic;
-    signal dist : std_logic_vector (14 downto 0);
+    signal dist : std_logic_vector (8 downto 0);
     signal beep : std_logic;
 
     constant TbPeriod : time := 10 ns; 
@@ -43,19 +43,17 @@ begin
     begin
         -- ***EDIT*** Adapt initialization as needed
         dist <= (others => '0');
-        wait for 10 ns;
+        wait for 100 ns;
         -- Reset generation
         --  ***EDIT*** Replace YOURRESETSIGNAL below by the name of your reset as I haven't guessed it
-        dist <= std_logic_vector(to_unsigned(2000, 15));
-        wait for 300 ns;
-        dist <= std_logic_vector(to_unsigned(1000, 15));
-        wait for 400 ns;
-        dist <= std_logic_vector(to_unsigned(4000, 15));
-        wait for 400 ns;
-        dist <= std_logic_vector(to_unsigned(8000, 15));
-        wait for 400 ns;
-        dist <= std_logic_vector(to_unsigned(10000, 15));
-        wait for 200 ns;
+        dist <= std_logic_vector(to_unsigned(120, 9));
+        wait for 500 ns;
+        dist <= std_logic_vector(to_unsigned(70, 9));
+        wait for 3000 ns;
+        dist <= std_logic_vector(to_unsigned(45, 9));
+        wait for 1500 ns;
+        dist <= std_logic_vector(to_unsigned(20, 9));
+        wait for 1500 ns;
         -- ***EDIT*** Add stimuli here
        
 

@@ -3,10 +3,10 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu May  8 07:18:36 2025
-# Process ID: 12072
+# Start of session at: Tue Apr 29 20:55:10 2025
+# Process ID: 17872
 # Current directory: c:/Users/kipap/VUT/DE1/projekt/De1-project/car_parking_sensors
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8932 C:\Users\kipap\VUT\DE1\projekt\De1-project\car_parking_sensors\car_parking_sensors.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8984 C:\Users\kipap\VUT\DE1\projekt\De1-project\car_parking_sensors\car_parking_sensors.xpr
 # Log file: c:/Users/kipap/VUT/DE1/projekt/De1-project/car_parking_sensors/vivado.log
 # Journal file: c:/Users/kipap/VUT/DE1/projekt/De1-project/car_parking_sensors\vivado.jou
 # Running On        :kocicak
@@ -17,44 +17,10 @@
 # CPU Physical cores:8
 # CPU Logical cores :16
 # Host memory       :14702 MB
-# Swap memory       :25769 MB
-# Total Virtual     :40471 MB
-# Available Virtual :28074 MB
+# Swap memory       :23044 MB
+# Total Virtual     :37746 MB
+# Available Virtual :25904 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/kipap/VUT/DE1/projekt/De1-project/car_parking_sensors/car_parking_sensors.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-source tb_Buzzer.tcl
-set_property -name {xsim.simulate.runtime} -value {7000ns} -objects [get_filesets sim_1]
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
-launch_simulation
-source tb_Buzzer.tcl
-close_sim
