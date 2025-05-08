@@ -1,8 +1,9 @@
 Vstupy:
-  - time1
-  - time2
-  - time3
-  - time4
+  - time1 -- čas od senzoru 1
+  - time2 -- čas od senzoru 2
+  - time3 -- čas od senzoru 3
+  - time4 -- čas od senzoru 4
+  - clk
 
 Výstupy
 7-segmentovky
