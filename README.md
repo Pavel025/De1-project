@@ -1,10 +1,11 @@
 Vstupy:
-  -time1
-  -time2
-  -time3
-  -time4
+  - time1
+  - time2
+  - time3
+  - time4
+
 Výstupy
-7-seg
+7-segmentovky
   - seg1 desítky
   - seg2 jednotky
   - seg3 směr
