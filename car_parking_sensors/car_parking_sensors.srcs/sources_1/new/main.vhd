@@ -40,7 +40,7 @@ begin
 
     clk_1MHz_out <= clk_1MHz; -- Jen pro simulaci
     
-    -- HODINY 1us
+    -- Hodiny 1us
     process (clk)
     begin
         if rising_edge(clk) then
@@ -54,7 +54,7 @@ begin
     end process;
     
     
-    -- STOPKY
+    -- Stopky
     process (clk_1MHz)
     begin   
         if rising_edge(clk_1MHz) then
@@ -94,7 +94,7 @@ begin
                 end if;
             end if;
             
-
+            -- Spouštění signálu trig
             if counter_60ms = 59999 then
                 trig_active <= '1';
                 counter_60ms <= (others => '0');

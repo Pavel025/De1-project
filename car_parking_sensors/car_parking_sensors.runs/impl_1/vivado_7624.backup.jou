@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed Apr 30 14:50:14 2025
-# Process ID: 14828
+# Start of session at: Thu May  8 14:49:00 2025
+# Process ID: 7624
 # Current directory: C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/car_parking_sensors.runs/impl_1
 # Command line: vivado.exe -log top_level.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_level.tcl -notrace
 # Log file: C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/car_parking_sensors.runs/impl_1/top_level.vdi
@@ -17,8 +17,8 @@
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :16929 MB
-# Swap memory       :9663 MB
-# Total Virtual     :26593 MB
-# Available Virtual :4000 MB
+# Swap memory       :10737 MB
+# Total Virtual     :27667 MB
+# Available Virtual :6094 MB
 #-----------------------------------------------------------
 source top_level.tcl -notrace

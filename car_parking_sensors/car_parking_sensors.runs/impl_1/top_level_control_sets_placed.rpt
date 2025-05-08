@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date         : Wed Apr 30 15:16:14 2025
+| Date         : Thu May  8 14:50:04 2025
 | Host         : DESKTOP-K2PR65N running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_level_control_sets_placed.rpt
 | Design       : top_level
@@ -80,9 +80,9 @@ Table of Contents
 |  CLK100MHZ_IBUF_BUFG | display/process_num            |                                      |                6 |              7 |         1.17 |
 |  CLK100MHZ_IBUF_BUFG |                                | display/ones[2]_i_1_n_0              |                4 |             10 |         2.50 |
 |  clk_BUFG            | ECHO4_IBUF                     | main0/sig_count4                     |                4 |             15 |         3.75 |
-|  clk_BUFG            | ECHO1_IBUF                     | main0/sig_count1                     |                4 |             15 |         3.75 |
-|  clk_BUFG            | ECHO2_IBUF                     | main0/sig_count2                     |                4 |             15 |         3.75 |
 |  clk_BUFG            | ECHO3_IBUF                     | main0/sig_count3                     |                4 |             15 |         3.75 |
+|  clk_BUFG            | ECHO2_IBUF                     | main0/sig_count2                     |                4 |             15 |         3.75 |
+|  clk_BUFG            | ECHO1_IBUF                     | main0/sig_count1                     |                4 |             15 |         3.75 |
 |  CLK100MHZ_IBUF_BUFG | display/clk_1kHz_counter       | display/clk_1kHz_counter[16]_i_1_n_0 |                4 |             16 |         4.00 |
 |  clk_BUFG            | main0/counter_60ms[16]_i_2_n_0 | main0/counter_60ms[16]_i_1_n_0       |                4 |             16 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG |                                | buzz/counter                         |                8 |             32 |         4.00 |

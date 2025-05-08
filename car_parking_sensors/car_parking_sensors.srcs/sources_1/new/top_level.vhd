@@ -68,10 +68,10 @@ architecture Behavioral of top_level is
     component my_led is
         Port (
             clk      : in STD_LOGIC;
-            distance : in STD_LOGIC_VECTOR(8 downto 0);   -- cm distance 
-            red  :     out STD_LOGIC;   -- red 
-            green  :   out STD_LOGIC;   -- green 
-            blue  :    out STD_LOGIC    -- blue 
+            distance : in STD_LOGIC_VECTOR(8 downto 0);   -- vzdálenost v centimetrech
+            red  :     out STD_LOGIC;   -- červená 
+            green  :   out STD_LOGIC;   -- zelená 
+            blue  :    out STD_LOGIC    -- modrá 
         );
     end component;
     
@@ -127,10 +127,10 @@ begin
     led : component my_led
          port map (
             clk => CLK100MHZ,
-            distance => dist_tmp,   -- cm distance 
-            red => LED_R,   -- red 
-            green => LED_G,   -- green 
-            blue => LED_B    -- blue 
+            distance => dist_tmp,   -- vzdálenost v centimetrech 
+            red => LED_R,   -- červená 
+            green => LED_G,   -- zelená 
+            blue => LED_B    -- modrá 
             );
             
     display : component seg_disp

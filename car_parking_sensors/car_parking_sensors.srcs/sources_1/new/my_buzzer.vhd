@@ -2,15 +2,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity my_buzzer is    --!!!!!!!!!!!!!
+entity my_buzzer is
     Port (
         clk   : in  std_logic;
-        dist  : in  STD_LOGIC_VECTOR(8 downto 0);  -- 32 767 ~ 4 m              --!!!!!!!!!!!!! v top levlu nastavit 8 downto 0 i u led
+        dist  : in  STD_LOGIC_VECTOR(8 downto 0);  -- 32 767 ~ 4 m
         beep  : out STD_LOGIC
     );
-end my_buzzer;     --!!!!!!!!!!!!!
+end my_buzzer;
 
-architecture Behavioral of my_buzzer is        --!!!!!!!!!!!!!
+architecture Behavioral of my_buzzer is
     constant CLK_FREQ : integer := 100_000_000; -- 100 M = 1 s => 10 ns 
 
     signal dist_internal         : unsigned(8 downto 0);

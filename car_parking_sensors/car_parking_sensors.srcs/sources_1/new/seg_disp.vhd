@@ -76,17 +76,17 @@ begin
             if process_num = "01" then
                 process_num <= b"10";
                 clk_1kHz_counter <= (others => '0');
-                local_multiplex <= b"1111_1101";    -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!
+                local_multiplex <= b"1111_1101";
             else
                 if process_num = "10" then
                     process_num <= b"11";
                     clk_1kHz_counter <= (others => '0');
-                    local_multiplex <= b"1111_0111";     -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    local_multiplex <= b"1111_0111";
                 else
                     if process_num = "11" then
                         process_num <= b"01";
                         clk_1kHz_counter <= (others => '0');
-                        local_multiplex <= b"1111_1110";     -- změnit podle dohody!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        local_multiplex <= b"1111_1110";
                     end if;
                 end if;    
             end if;

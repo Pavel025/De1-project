@@ -1,40 +1,10 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="9320" HostCore="12" HostMemory="016929980416">
+    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="31228" HostCore="12" HostMemory="016929980416">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="35968" HostCore="12" HostMemory="016929980416">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="40168" HostCore="12" HostMemory="016929980416">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="33256" HostCore="12" HostMemory="016929980416">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="34872" HostCore="12" HostMemory="016929980416">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="41012" HostCore="12" HostMemory="016929980416">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="9300" HostCore="12" HostMemory="016929980416">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="12768" HostCore="12" HostMemory="016929980416">
+    <Process Command="vivado.bat" Owner="Karel" Host="DESKTOP-K2PR65N" Pid="14076" HostCore="12" HostMemory="016929980416">
     </Process>
 </ProcessHandle>
