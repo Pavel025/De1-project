@@ -6,9 +6,12 @@
 3. Pavel Horský (zodpovědný za buzzer)
 4. Karel Matoušek (zodpovědný za ultrasonic sensor)
 
-## Abstract
+## Abstrakt
 
 V tomto projektu jsme se zabývali naprogramováním FPGA desky Nexys A7-50T v programu Vivado v jazyce VHDL. Naše zařízení mělo za cíl měřit vzdálenost do čtyř směrů a tyto hodnoty předat uživateli. Pro vizualizaci jsme se rozhodli vypsat na sedmisegmentovém displeji hodnotu minimální vzdálenosti a zobrazit jaký sensor je nejblíže překážce. Navíc, pro rychlejší upozornění uživatele se mění barva na RGB LED od zelené k červené a bzučák vydává častější a častější pípání, tak jak to bývá v autech.
+
+## Kompletní zapojení modulů s deskou
+![](489729330_1236511481473971_8188106298658079208_n.jpg)
 
 ## Demonstrační video
 
@@ -252,4 +255,6 @@ https://www.farnell.com/datasheets/3422740.pdf
 https://microcontrollerslab.com/buzzer-module-interfacing-arduino-sound-code/
 
 https://robu.in/wp-content/uploads/2016/05/i2c-logic-level-converter-4-channel-bi-directional-module.pdf
+
+https://vhdl.lapinoo.net/
 
