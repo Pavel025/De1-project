@@ -3,10 +3,10 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Thu Apr 10 09:36:02 2025
-# Process ID: 9128
+# Start of session at: Thu May  8 15:05:59 2025
+# Process ID: 1580
 # Current directory: C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23992 C:\Users\DELL_KM\Desktop\DE1\DE1_CPP\Projekt\De1-project\car_parking_sensors\car_parking_sensors.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24480 C:\Users\DELL_KM\Desktop\DE1\DE1_CPP\Projekt\De1-project\car_parking_sensors\car_parking_sensors.xpr
 # Log file: C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/vivado.log
 # Journal file: C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors\vivado.jou
 # Running On        :DESKTOP-K2PR65N
@@ -17,10 +17,21 @@
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :16929 MB
-# Swap memory       :8958 MB
-# Total Virtual     :25888 MB
-# Available Virtual :4833 MB
+# Swap memory       :10737 MB
+# Total Virtual     :27667 MB
+# Available Virtual :8509 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/DELL_KM/Desktop/DE1/DE1_CPP/Projekt/De1-project/car_parking_sensors/car_parking_sensors.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+source cfg_tb_main.tcl
+close_sim
+launch_simulation
+source cfg_tb_main.tcl
+close_sim
+launch_simulation
+launch_simulation
+source cfg_tb_main.tcl
+close_sim
