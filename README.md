@@ -104,6 +104,39 @@ https://github.com/Pavel025/De1-project/blob/branch_main/car_parking_sensors/car
 Testbench:\
 https://github.com/Pavel025/De1-project/blob/branch_main/car_parking_sensors/car_parking_sensors.srcs/sim_1/new/main_tb.vhd
 
+### 7-segment
+Vstupy:
+  - time1 -- čas od senzoru 1
+  - time2 -- čas od senzoru 2
+  - time3 -- čas od senzoru 3
+  - time4 -- čas od senzoru 4
+  - clk
+
+Výstupy:
+  - seg -- vykresluje směr a vzdálenost nejbližší překážky v centimetrech. Pouze hodnoty 00-99.
+
+Blokové schéma: 
+
+![ahhh drawio](https://github.com/user-attachments/assets/7742eb75-8ae6-4e68-aece-44949003a91e)
+
+
+
+Princip:
+Ze čtyř časových hodnot získaných ze senzorů po přepočtu na vzdálenost vybere nejnižší hodnotu (s každou náběžnou hranou CLK). Poté se zpracuje tak, že pokud je nižší než 100cm, pak ji rozdělíme na desítky a jednotky. Ty spolu se směrem převádí na signál pro každou segmentovku. Tyto 3 výstupní siganály se pak s periodou 1 KHz střídají na výstupu seg (pro oko se tak zdá, že svítí všechny zaráz).
+
+![20250502_094255](https://github.com/user-attachments/assets/efab28f1-9def-4b59-a3f6-0f94c06b3759)
+
+Simulace všech 3 výstupních signálů:
+
+![Snímek obrazovky 2025-05-08 225739](https://github.com/user-attachments/assets/306a3084-6c54-4104-ba78-0aa7fb58f637)
+
+Odkazy:\
+Source code:\
+https://github.com/Pavel025/De1-project/blob/branch_main/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/seg_disp.vhd \
+Testbench:\
+https://github.com/Pavel025/De1-project/blob/Displays/car_parking_sensors/car_parking_sensors.srcs/sim_1/new/Displays_tb.vhd 
+
+
 ### LEDs
 
 názorně a logicky svítí barvou, která reprezentuje naši vzdálenost od překážky
@@ -162,8 +195,6 @@ RGB na desce
 ![RGB na desce](https://github.com/user-attachments/assets/4120faa5-01e3-46eb-9500-818254c9b527)
 
 
-
-
 ### Bzučák
 Pro zvukové upozornění slouží bzučák s proměnnou délkou pípání a mezery v závislosti na minimální vzdálenosti překážky
 
@@ -206,35 +237,6 @@ https://github.com/Pavel025/De1-project/blob/Beep/car_parking_sensors/car_parkin
 Testbench:\
 https://github.com/Pavel025/De1-project/blob/Beep/car_parking_sensors/car_parking_sensors.srcs/sim_1/new/tb_Buzzer.vhd
 
-### 7-segment
-Vstupy:
-  - time1 -- čas od senzoru 1
-  - time2 -- čas od senzoru 2
-  - time3 -- čas od senzoru 3
-  - time4 -- čas od senzoru 4
-  - clk
-
-Výstupy:
-  - seg -- vykresluje směr a vzdálenost nejbližší překážky v centimetrech. Pouze hodnoty 00-99.
-
-Blokové schéma: 
-
-![ahhh drawio](https://github.com/user-attachments/assets/7742eb75-8ae6-4e68-aece-44949003a91e)
-
-
-
-Princip:
-Ze čtyř časových hodnot získaných ze senzorů po přepočtu na vzdálenost vybere nejnižší hodnotu(s každou náběžnou hranou CLK). Poté se zpracuje tak že pokud je nižší než 100cm pak ji rozdělíme na desítky a jednotky. Ty spolu se směrem převádí na signál pro každou segmentovku. Tyto 3 výstupní siganály se pak s periodou 1 KHz střídají na výstupu seg (pro oko se tak zdá že svítí všechny zaráz).
-
-![20250502_094255](https://github.com/user-attachments/assets/efab28f1-9def-4b59-a3f6-0f94c06b3759)
-
-Simulace všech 3 výstupních signálů:
-![Snímek obrazovky 2025-05-08 225739](https://github.com/user-attachments/assets/306a3084-6c54-4104-ba78-0aa7fb58f637)
-Odkazy:\
-Source code:\
-https://github.com/Pavel025/De1-project/blob/branch_main/car_parking_sensors/car_parking_sensors.srcs/sources_1/new/seg_disp.vhd \
-Testbench:\
-https://github.com/Pavel025/De1-project/blob/Displays/car_parking_sensors/car_parking_sensors.srcs/sim_1/new/Displays_tb.vhd 
 
 ### Top level
 
